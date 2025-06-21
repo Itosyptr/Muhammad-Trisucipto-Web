@@ -1,0 +1,788 @@
+/* ========== VARIABEL & STYLE DASAR ========== */
+:root {
+    --bg-color: #121212;
+    --primary-text-color: #FFFFFF;
+    --secondary-text-color: #A9A9A9;
+    --accent-color: #ADFF2F; /* a vibrant green */
+    --card-bg-color: #1E1E1E;
+    --border-color: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========== HEADER & FOOTER ========== */
+.main-header, .main-footer {
+    padding: 20px 0;
+}
+
+.main-header .container, .main-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+/* GANTI DENGAN KODE INI */
+nav a {
+    text-decoration: none;
+    color: var(--secondary-text-color);
+    font-weight: 500;
+    transition: color 0.3s ease; /* <-- BARIS TAMBAHAN */
+}
+
+nav a:hover, nav a.active {
+    color: var(--primary-text-color);
+}
+
+/* GANTI DENGAN KODE INI */
+.btn-contact-nav {
+    text-decoration: none;
+    color: var(--primary-text-color);
+    border: 1px solid var(--border-color);
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease; /* <-- BARIS TAMBAHAN */
+}
+
+.btn-contact-nav:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border-color: var(--accent-color);
+}
+
+/* ========== TOMBOL / BUTTONS ========== */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-text-color);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border-color: var(--accent-color);
+}
+
+/* ========== STYLE UMUM SECTION ========== */
+section {
+    padding: 80px 0;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.subtitle {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* ========== HERO SECTION (HOME) ========== */
+.hero {
+    padding: 80px 0;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 6rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--secondary-text-color);
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    background: linear-gradient(to top right, var(--accent-color), transparent);
+}
+
+/* ========== WHY WORK WITH ME (HOME) ========== */
+.work-with-me {
+    background-color: #FFFFFF;
+    color: var(--bg-color);
+    border-radius: 20px;
+    margin: 0 20px;
+}
+.work-with-me h2 {
+    color: var(--bg-color);
+}
+.features {
+    display: flex;
+    gap: 30px;
+    text-align: left;
+}
+.feature-item {
+    flex: 1;
+}
+.feature-icon {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.feature-item p {
+    color: #555;
+}
+
+/* ========== ELEVATING BRANDS (HOME) ========== */
+.elevating-brands h2 {
+    text-align: left;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--card-bg-color);
+    border-radius: 20px;
+    overflow: hidden;
+    height: 300px;
+}
+
+.project-card.large {
+    height: 400px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+/* ========== CREATIVE WORKFLOW (HOME) ========== */
+.creative-workflow {
+    background-color: #FFFFFF;
+    color: var(--bg-color);
+    border-radius: 20px;
+    margin: 0 20px;
+}
+.creative-workflow h2 {
+    text-align: left;
+    color: var(--bg-color);
+}
+.workflow-steps .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #E0E0E0;
+}
+.workflow-steps .step:last-child {
+    border-bottom: none;
+}
+.step-number {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+.step-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+.step-content p {
+    color: #555;
+}
+
+/* ========== STATS SECTION (HOME) ========== */
+.stats-section {
+    background-color: var(--accent-color);
+    padding: 60px 0;
+}
+.stats-section .container {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.stat-item h2 {
+    font-size: 4rem;
+    color: var(--bg-color);
+    margin-bottom: 0;
+}
+.stat-item p {
+    font-size: 1.2rem;
+    color: var(--bg-color);
+    font-weight: 500;
+}
+
+/* ========== FINAL CTA & FOOTER ========== */
+.cta-final {
+    text-align: center;
+    padding: 100px 0;
+}
+.cta-final p {
+    color: var(--accent-color);
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.cta-final h2 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+.cta-final a {
+    font-size: 1.5rem;
+    color: var(--primary-text-color);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+.cta-final a:hover {
+    color: var(--accent-color);
+}
+
+.main-footer {
+    border-top: 1px solid var(--border-color);
+}
+
+/* ========== STYLES FOR ABOUT PAGE ========== */
+.page-title-section h1 {
+    font-size: 8rem;
+    text-align: center;
+    color: var(--primary-text-color);
+    padding: 40px 0;
+}
+
+.about-intro-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-intro-image {
+    flex-basis: 40%;
+}
+
+.about-intro-image img {
+    width: 100%;
+    border-radius: 20px;
+    background: linear-gradient(to top right, var(--accent-color), transparent);
+}
+
+.about-intro-text {
+    flex-basis: 60%;
+}
+
+.about-intro-text h2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.about-intro-text p {
+    color: var(--secondary-text-color);
+    margin-bottom: 20px;
+}
+
+.work-experience {
+    background-color: #FFFFFF;
+    color: var(--bg-color);
+    border-radius: 20px;
+    margin: 0 20px;
+}
+
+.work-experience h2 {
+    color: var(--bg-color);
+}
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.experience-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #E0E0E0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.experience-item:last-child {
+    border-bottom: none;
+}
+
+.experience-item h3 {
+    font-size: 1.5rem;
+    color: var(--bg-color);
+}
+
+.experience-item p {
+    color: #555;
+    font-weight: 500;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* ALTERNATIF JIKA INGIN KOTAK PERSEGI PANJANG */
+
+.gallery-grid img {
+    width: 100%;
+    height: 450px;       /* Atur tinggi tetap sesuai keinginan Anda */
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* ========== STYLES FOR PROJECTS PAGE ========== */
+.project-filters {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.project-filters a {
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.project-filters a:hover,
+.project-filters a.active {
+    color: var(--bg-color);
+    background-color: var(--accent-color);
+}
+
+.project-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.item-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 40px 20px 20px 20px;
+    color: var(--primary-text-color);
+}
+
+.item-info h3 {
+    font-size: 1.5rem;
+}
+
+.item-info p {
+    font-size: 1rem;
+    color: var(--secondary-text-color);
+}
+
+.faq-section {
+    background-color: #FFFFFF;
+    color: var(--bg-color);
+    border-radius: 20px;
+    margin: 80px 20px;
+    padding: 80px 0;
+}
+
+.faq-section h2 {
+    color: var(--bg-color);
+    text-align: left;
+}
+
+.faq-list details {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0;
+    color: #555;
+}
+
+.faq-list summary {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--bg-color);
+    cursor: pointer;
+    list-style: none; /* remove default marker */
+    position: relative;
+    padding-right: 30px;
+}
+
+.faq-list summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    font-size: 2rem;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.faq-list details[open] summary::after {
+    transform: rotate(45deg);
+}
+
+
+/* ========== STYLES FOR SERVICES PAGE ========== */
+.service-item {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.service-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.service-text {
+    flex-basis: 50%;
+}
+
+.service-image {
+    flex-basis: 50%;
+}
+
+.service-image img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.service-text h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.service-text p {
+    color: var(--secondary-text-color);
+    margin-bottom: 20px;
+}
+
+.service-text ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.service-text ul li {
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 10px;
+    color: var(--primary-text-color);
+}
+
+.service-text ul li::before {
+    content: '✓';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.btn-price {
+    background-color: var(--card-bg-color);
+    color: var(--primary-text-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-price:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* ========== STYLES FOR CONTACT PAGE ========== */
+
+.contact-form-section {
+    padding-bottom: 120px;
+}
+
+.contact-container {
+    display: flex;
+    gap: 50px;
+}
+
+.contact-info {
+    flex-basis: 40%;
+}
+
+.contact-form {
+    flex-basis: 60%;
+}
+
+.contact-info h2 {
+    text-align: left;
+    font-size: 3rem;
+}
+
+.info-box {
+    background-color: var(--card-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.info-box .info-title {
+    color: var(--secondary-text-color);
+    margin-bottom: 10px;
+}
+
+.info-box a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--primary-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border-color: var(--accent-color);
+}
+
+.social-btn svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--primary-text-color);
+    fill: none;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover svg {
+    stroke: var(--bg-color);
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--secondary-text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    color: var(--primary-text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.contact-form button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* ========== RESPONSIVENESS ========== */
+@media (max-width: 992px) {
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+    .hero-content p {
+        margin: 0 auto 30px auto;
+    }
+    .project-grid, .project-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-card, .project-card.large {
+        height: 300px;
+    }
+    
+    .page-title-section h1 {
+        font-size: 6rem;
+    }
+    .about-intro-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-intro-text h2 {
+        text-align: center;
+    }
+    
+    .service-item, .service-item:nth-child(even) {
+        flex-direction: column;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    nav ul {
+        gap: 15px;
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    h2, .cta-final h2, .contact-info h2 {
+        font-size: 2.5rem;
+    }
+    .cta-final a {
+        font-size: 1.2rem;
+    }
+    .features {
+        flex-direction: column;
+    }
+    .stats-section .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .page-title-section h1 {
+        font-size: 4rem;
+    }
+    .experience-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .faq-list summary {
+        font-size: 1.2rem;
+    }
+}
