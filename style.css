@@ -769,7 +769,7 @@ h2 {
     .stats-section .container {
         flex-direction: column;
         gap: 30px;
-    }
+    }   
     .page-title-section h1 {
         font-size: 4rem;
     }
